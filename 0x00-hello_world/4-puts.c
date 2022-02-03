@@ -1,7 +1,16 @@
 #include <stdio.h>
 
-/* main.c */
+/**
+ * main - main
+ * Return: 0
+ *
+ * Description:  A column of asterisks on the left side,
+ * with beginning and ending almost-blank lines.
+ */
+
 int main(void)
 {
 printf "Programming is like building a multilingual puzzle\n";
+return (0);
+
 }
