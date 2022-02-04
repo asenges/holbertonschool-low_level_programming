@@ -17,7 +17,7 @@ char sp = '\n';
 for (n = 0; n < 10; n++)
 printf("%d", n);
 
-printf("%s", sp);
+printf("%c", sp);
 return (0);
 
 }
