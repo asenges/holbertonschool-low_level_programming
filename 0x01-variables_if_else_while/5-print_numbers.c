@@ -12,12 +12,12 @@ int main(void)
 {
 
 int n = 0;
-/*char sp = '\n';*/
+char sp = '\n';
 
 for (n = 0; n < 10; n++)
 printf("%d", n);
 
-/*printf(sp);*/
+printf("%s", sp);
 return (0);
 
 }
