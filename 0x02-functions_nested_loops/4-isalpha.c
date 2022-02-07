@@ -3,7 +3,7 @@
 #include <ctype.h>
 
 /**
- * _islower - funtion to check if a param is alpha
+ * _isalpha - funtion to check if a param is alpha
  * Return: int
  * @c: int
  *
@@ -12,10 +12,10 @@
  * Date: Feb 7, 2022
  */
 
-int _islower(int c)
+int _isalpha(int c)
 {
 
-	if (islower(c))
+	if (isalpha(c))
 	{
 		return (1);
 	}
@@ -40,14 +40,20 @@ int main(void)
 
 	int r;
 
-	r = _islower('H');
+	r = _isalpha('H');
 	_putchar(r + '0');
-	r = _islower('o');
+	r = _isalpha('o');
 	_putchar(r + '0');
-	r = _islower(108);
+	r = _isalpha(108);
+	_putchar(r + '0');
+	r = _isalpha(';');
 	_putchar(r + '0');
 	_putchar('\n');
+
 	return (0);
 
 }
+
+
+
 
