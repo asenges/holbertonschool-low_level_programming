@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 
-
 /**
- * main - program to print the alphabet
+ * print_alphabet - funtion to call _putchar
  * Return: 0
  *
  * Description:
@@ -11,9 +10,15 @@
  * Date: Feb 7, 2022
  */
 
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+        char c;
+
+        for (c = 'a' ; c <= 'z'; c++)
+        {
+        _putchar(c);
+        }
+        _putchar('\n');
+
 }
 
