@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-#include "_putchar.c"
 #include "main.h"
-
 
 /**
  * main - Prints _putchar
@@ -17,9 +15,9 @@ int main(void)
 {
 
 	char word[9] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r', '\n'};
-	int i;
+	int i = 0;
 
-	for (i = 0; i < sizeof(word); i++)
+	for (; i < 9; i++)
 	{
 		_putchar(word[i]);
 	}
