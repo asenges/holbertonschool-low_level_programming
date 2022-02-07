@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-#include <ctype.h>
+#include <stdlib.h>
 
 /**
  * _abs - function to check if number is absolute
@@ -15,18 +15,6 @@
 int _abs(int n)
 {
 
-	if (n > 0)
-	{
-		return (1);
-	}
-	else if (n < 0)
-	{
-		return (-1);
-	}
-	else
-	{
-		return (0);
-	}
-	
+	return abs(n);	
 
 }
