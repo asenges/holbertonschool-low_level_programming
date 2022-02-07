@@ -42,7 +42,7 @@ while (i < 10)
 
 		j++;
 	}
-	_putchar('\n');
+	/*_putchar('\n');*/
 	i++;
 
 }
