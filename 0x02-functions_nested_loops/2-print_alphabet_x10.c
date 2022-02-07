@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "_putchar.c"
+#include "main.h"
 
 /**
  * print_alphabet_x10 - funtion to call _putchar x10
@@ -28,18 +28,4 @@ void print_alphabet_x10(void)
 
 }
 
-/**
- * main - program to print the alphabet x10
- * Return: 0
- *
- * Description:
- * Author: Alex Senges
- * Date: Feb 7, 2022
- */
-
-int main(void)
-{
-	print_alphabet_x10();
-	return (0);
-}
 
