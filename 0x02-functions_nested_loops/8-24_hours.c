@@ -15,59 +15,24 @@
 void jack_bauer(void)
 {
 
-int h;
-int m;
+int i, j;
 
-for (h = 0; h < 24; h++)
+i = 0;
+while (i < 24)
 {
-	if (h <= 9)
+	j = 0;
+	while (j < 60)
 	{
-		for (m = 0; m < 60; m++)
-		{
-			if (m <= 9)
-			{
-				_putchar('0');
-				_putchar(h + '0');
-				_putchar(':');
-				_putchar('0');
-				_putchar(m + '0');
-				_putchar('\n');
-			}
-			else if (m >= 10)
-			{
-				_putchar((h / 10) + '0');
-				_putchar((h % 10) + '0');
-				_putchar(':');
-				_putchar((m / 10) + '0');
-				_putchar((m % 10) + '0');
-				_putchar('\n');
-			}
-		}
+		_putchar((i / 10) + '0');
+		_putchar((i % 10) + '0');
+		_putchar(':');
+		_putchar((j / 10) + '0');
+		_putchar((j % 10) + '0');
+		_putchar('\n');
+		j++;
 	}
-	else if (h >= 10)
-	{
-		for (m = 0; m < 60; m++)
-		{
-			if (m <= 9)
-			{
-				_putchar((h / 10) + '0');
-				_putchar((h % 10) + '0');
-				_putchar(':');
-				_putchar('0');
-				_putchar(m + '0');
-				_putchar('\n');
-			}
-			else if (m >= 10)
-			{
-				_putchar((h / 10) + '0');
-				_putchar((h % 10) + '0');
-				_putchar(':');
-				_putchar((m / 10) + '0');
-				_putchar((m % 10) + '0');
-				_putchar('\n');
-			}
-		}
-	}
+	i++;
+
 }
 
 }
