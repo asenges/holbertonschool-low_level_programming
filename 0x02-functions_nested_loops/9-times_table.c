@@ -38,7 +38,6 @@ while (i < 10)
 		{
 			_putchar(',');
 			_putchar(' ');
-			_putchar(' ');
 		}
 
 		j++;
