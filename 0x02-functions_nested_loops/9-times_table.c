@@ -27,6 +27,9 @@ while (i < 10)
 		if ((k / 10) + '0' != '0')
 		{
 			_putchar((k / 10) + '0');
+		} else
+		{
+			_putchar(' ');
 		}
 
 		_putchar((k % 10) + '0');
