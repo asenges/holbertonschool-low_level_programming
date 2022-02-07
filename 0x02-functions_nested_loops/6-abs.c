@@ -15,6 +15,9 @@
 int _abs(int n)
 {
 
-	return (abs(n));	
+int r;
+
+r = abs(n);
+return (r);
 
 }
