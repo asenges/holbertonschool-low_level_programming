@@ -21,13 +21,9 @@ if (n > 0)
 {
 lastDigit = n % 10;
 }
-else if (n < 0)
-{
-lastDigit = (n * -1) % 10;
-}
 else
 {
-lastDigit = n % 10;
+lastDigit = (n * -1) % 10;
 }
 
 _putchar(lastDigit + '0');
