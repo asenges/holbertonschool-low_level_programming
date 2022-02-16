@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 #include <string.h>
-#include <ctype.h> 
+#include <ctype.h>
 
 /**
  * cap_string - function to upp all characters in array
@@ -24,7 +24,7 @@ char *cap_string(char *s)
 			s[i] = (toupper(s[i]));
 
 		for (j = 0; j < strlen(sep); j++)
-			if (sep[j] == s[i-1])
+			if (sep[j] == s[i - 1])
 				s[i] = (toupper(s[i]));
 	}
 
