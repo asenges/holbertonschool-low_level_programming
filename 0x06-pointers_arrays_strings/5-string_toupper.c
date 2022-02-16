@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 #include <string.h>
-#include <ctype.h> 
+#include <ctype.h>
 
 /**
  * string_toupper - function to upp all characters in array
