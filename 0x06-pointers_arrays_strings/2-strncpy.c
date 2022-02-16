@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
- * _strcpy - function to copy one string to a destination
+ * _strncpy - function to copy one string to a destination
  * Return: char ptr
  * @dest: char ptr
  * @src: char ptr
@@ -18,6 +18,7 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
 	size_t j, destlen, k;
+
 	destlen = strlen(dest);
 	k = n;
 
