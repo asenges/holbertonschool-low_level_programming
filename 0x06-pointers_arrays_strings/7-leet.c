@@ -22,7 +22,7 @@ char *leet(char *s)
 	for (i = 0; i < strlen(s); i++)
 	{
 		for (j = 0; j < strlen(letter); j++)
-			if (s[i] == letter[j] || s[i] == letter[j] + 32)
+			if (s[i] == letter[j] || s[i] == letter[j] - 32)
 				s[i] = number[j];
 	}
 
