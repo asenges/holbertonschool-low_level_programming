@@ -16,13 +16,13 @@
 char *leet(char *s)
 {
 	size_t i, j;
-	char letter[] = {97, 101, 111, 116, 108};
-	char number[] = {52, 51, 48, 55, 49};
+	char letter[] = {97, 101, 111, 116, 108, 32};
+	char number[] = {52, 51, 48, 55, 49, 32};
 
 	for (i = 0; i < strlen(s); i++)
 	{
 		for (j = 0; j < strlen(letter); j++)
-			if (s[i] == letter[j] || s[i] == letter[i] + 32)
+			if (s[i] == letter[j] || s[i] == letter[j] + 32)
 				s[i] = number[j];
 	}
 
