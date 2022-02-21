@@ -16,16 +16,12 @@
 char *_strchr(char *s, char c)
 {
 	size_t i;
-	char *pos;
 
-	pos = s;
-
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < strlen(s); i++)
 	{
 		if (s[i] == c)
 		{
-			pos = s + i;
-			return (pos);
+			return (s + i);
 		}
 	}
 
