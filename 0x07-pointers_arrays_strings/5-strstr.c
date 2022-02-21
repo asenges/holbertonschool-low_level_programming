@@ -15,11 +15,10 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	size_t i, j, k, co;
+	size_t i, j, k, cnt;
 
 	i = 0;
-	k = 0;
-	co = 0;
+	cnt = 0;
 
 	while (needle[i] != '\0')
 	{
@@ -28,21 +27,30 @@ char *_strstr(char *haystack, char *needle)
 			if (needle[i] == haystack[j])
 			{
 				haystack += j;
-
-				while (haystack[k] != '\0')
+				for (k = 0; k < strlen(needle); k++)
 				{
 					if (haystack[k] == needle[k])
-						co++;
+					{
+						cnt++;
+						printf("Bas %c\n", haystack[k]);
+						printf("Ned %c\n", needle[k]);
+						printf("Cnt %ld\n", cnt);
+						printf("Needle len %ld\n", strlen(needle));
+						
+						if (cnt == strlen(needle))
+							return (needle);
+						else
+							continue;
+					}
 					else
-						break;
-					k++;
+					{
+						printf("NOT EQUAL");
+						return (0);
+					}
 				}
 			}
 		}
 		i++;
 	}
-	if (co == strlen(needle))
-		return (haystack - (k - 1));
-	else
-		return ('\0');
+	return (0);
 }
