@@ -14,29 +14,23 @@
 int main(int argc, char *argv[])
 {
 	int i = 1;
-	size_t j = 0;
+	size_t j;
 	int sum = 0;
 
-	if (argc == 1)
+	for (; i < argc; i++)
 	{
-		printf("0\n");
-		return (0);
-	}
-	else
-	{
-		for (; i < argc; i++)
+		for (j = 0; (argv[i][j]); j++)
 		{
-			for (; j < strlen(argv[i]); j++)
+			if ((argv[i][j]) < 48 || (argv[i][j]) > 57)
 			{
-				if (!isdigit(argv[i][j]))
-				{
-					printf("Error\n");
-					return (1);
-				}
+				printf("Error\n");
+				return (1);
 			}
-			sum += atoi(argv[i]);
 		}
-		printf("%d\n", sum);
-		return (0);
+		sum += atoi(argv[i]);
 	}
+	printf("%d\n", sum);
+	
+	return (0);
 }
+
