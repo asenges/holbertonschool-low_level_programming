@@ -8,7 +8,7 @@
  * @argv: char
  *
  * Description:
- * Return: Always 0.
+ * Return: int
  */
 int main(int argc, char *argv[])
 {
