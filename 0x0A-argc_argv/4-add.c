@@ -12,19 +12,29 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc != 3)
+	int i = 1;
+	int sum = 0;
+
+	if (argc == 1)
 	{
 		printf("0\n");
 		return (-1);
 	}
-	else if (atoi(argv[1]) == 0 || atoi(argv[2]) == 0)
-	{
-		printf("Error\n");
-		return (1);
-	}
 	else
 	{
-		printf("%d\n", atoi(argv[1]) + atoi(argv[2]));
+		for (; i < argc; i++)
+		{
+			if (*argv[i] != '0' && atoi(argv[i]) == 0)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			else
+			{
+				sum += atoi(argv[i]);
+			}
+		}
+		printf("%d\n", sum);
 		return (0);
 	}
 }
