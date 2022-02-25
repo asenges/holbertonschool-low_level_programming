@@ -4,13 +4,11 @@
  * main - check the code
  * @argc: int
  * @argv: char
- *
  * Description:
- * Return: int
- *
+ * Return: Always 0.
  */
-int main(int argc __attribute__((__unused__)), char **argv)
+int main(int argc, char **argv __attribute__((__unused__)))
 {
-	printf("%s\n", *argv);
+	printf("%d\n", argc - 1);
 	return (0);
 }
