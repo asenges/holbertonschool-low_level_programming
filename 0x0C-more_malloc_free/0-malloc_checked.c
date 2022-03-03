@@ -2,6 +2,7 @@
 #include "main.h"
 #include <string.h>
 #include <stdlib.h>
+#include <limits.h>
 
 /**
  * malloc_checked - function
@@ -15,23 +16,16 @@
 
 void *malloc_checked(unsigned int b)
 {
-	/*
-	if (b != 0)
+	if (b > 0 && b < INT_MAX)
 	{
 		void *p = malloc(b);
 
 		if (p == NULL)
-			exit(EXIT_FAILURE);
+			exit(98);
 		return (p);
 	}
 	else
 	{
-		exit(EXIT_FAILURE);
+		exit(98);
 	}
-	*/
-	void *p = malloc(b);
-
- 	if (p == NULL)
- 		exit(EXIT_FAILURE);
- 	return (p);
 }
