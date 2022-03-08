@@ -16,7 +16,7 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *my_dog;
+	struct dog *my_dog;
 
 	my_dog = malloc(sizeof(struct dog));
 	if (my_dog == NULL)
