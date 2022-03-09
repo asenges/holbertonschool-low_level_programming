@@ -14,9 +14,7 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	if ((name != NULL || strlen(name) > 0) && f != NULL)
+	if (name && f)
 		f(name);
-	else
-		f("");
 }
 
