@@ -6,9 +6,7 @@
 /**
  * free_dog - function
  * Return: void
- * @name: char
- * @age: float
- * @owner: char
+ * @d: dog_t
  *
  * Description:
  * Author: Alex Senges
