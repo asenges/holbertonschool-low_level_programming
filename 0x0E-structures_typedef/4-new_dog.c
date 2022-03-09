@@ -26,10 +26,25 @@ dog_t *new_dog(char *name, float age, char *owner)
 	my_dog->owner = malloc(strlen(owner) + 1);
 
 	if (my_dog->name != NULL)
+	{
 		strcpy(my_dog->name, name);
+	}
+	else
+	{
+		free(my_dog->name);
+		return (NULL);
+	}
 
 	if (my_dog->owner != NULL)
+	{
 		strcpy(my_dog->owner, owner);
+	}
+	else
+	{
+		free(my_dog->name);
+		free(my_dog->owner);
+		return (NULL);
+	}
 
 	strcpy(my_dog->name, name);
 	strcpy(my_dog->owner, owner);
