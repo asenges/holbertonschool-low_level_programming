@@ -19,7 +19,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list ap;
 	unsigned int i;
 
-	if (n != 0 && separator != NULL)
+	if (separator != NULL)
 	{
 		va_start(ap, n);
 
