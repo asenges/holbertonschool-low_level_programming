@@ -4,7 +4,7 @@
 
 /**
  * get_op_func -function
- * Returns: int
+ * Return: int
  * @s: char
  *
  * Description:
@@ -30,7 +30,7 @@ int (*get_op_func(char *s))(int, int)
 			return (ops[i].f);
 		i++;
 	}
-	return NULL;
+	return (NULL);
 
 }
 
