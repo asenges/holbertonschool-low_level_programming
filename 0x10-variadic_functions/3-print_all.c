@@ -1,47 +1,93 @@
-#include <stddef.h>
+#include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include "variadic_functions.h"
+#include <stddef.h>
+#include <string.h>
 
 /**
- * print_all - variadic function
+ * print_string - print string
+ * @s: parameter
  * Return: void
- * @format: const char * const
- * @...: varargs
- *
- * Description:
- * Author: Alex Senges
- * Date: Mar 09, 2022
+ */
+void print_string(va_list s)
+{
+	char *aux = va_arg(s, char*);
+
+	if (aux == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", aux);
+}
+
+/**
+ * print_integer - print integer
+ * @i: parameter
+ * Return: void
+ */
+void print_integer(va_list i)
+{
+	printf("%d", va_arg(i, int));
+}
+
+/**
+ * print_char - print char
+ * @c: parameter
+ * Return: void
+ */
+void print_char(va_list c)
+{
+	printf("%c", (char) va_arg(c, int));
+}
+
+/**
+ * print_float - print float
+ * @f: parameter
+ * Return: void
+ */
+void print_float(va_list f)
+{
+	printf("%f", (float) va_arg(f, double));
+}
+
+/**
+ * print_all - print all
+ * @format: va_list
+ * Return: void
  */
 void print_all(const char * const format, ...)
 {
-	va_list ap;
-	unsigned int i;
+	int i = 0;
+	int j = 0;
+	char *empty = "", *comma = ", ";
+	va_list p;
+	opp selector[] = {
+		{"c", print_char},
+		{"i", print_integer},
+		{"f", print_float},
+		{"s", print_string},
+		{NULL, NULL}
+	};
 
-	if ((separator == NULL && separator[0] == '\0') || n <= 0)
+	va_start(p, format);
+
+	while (format != NULL && format[i] != '\0')
 	{
-		printf("\n");
-		exit(0);
-	}
-
-	va_start(ap, n);
-	for (i = 0; i < n; i++)
-	{
-		if (va_arg(ap, char*) == NULL)
+		j = 0;
+		while (selector[j].c != NULL)
 		{
-			printf("nil\n");
-			exit(0);
+			if (selector[j].c[0] == format[i])
+			{
+				printf("%s", empty);
+				selector[j].f(p);
+				empty = comma;
+			}
+			j++;
 		}
-		else
-		{
-			printf("%s", va_arg(ap, char*));
-			if (i < n - 1)
-				printf("%s", separator);
-		}
+		i++;
 	}
-	va_end(ap);
-
 	printf("\n");
+	va_end(p);
 }
 
