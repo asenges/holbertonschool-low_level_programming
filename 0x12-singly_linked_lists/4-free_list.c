@@ -5,10 +5,9 @@
 #include <stddef.h>
 #include "lists.h"
 /**
- * add_node_end - node add end
- * @head: list_t ptr ptr
- * @str: char ptr
- * Return: size_int
+ * free_list - free list
+ * @head: list_t ptr
+ * Return: void
  */
 void free_list(list_t *head)
 {
