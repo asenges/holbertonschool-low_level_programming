@@ -6,12 +6,11 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdarg.h>
-
 /**
- * list - Linked list
- * @c: char
- * @i: int
- * @f: pointer to next
+ * struct list - list struct
+ * @str: char
+ * @len: int
+ * @next: pointer to next
  */
 typedef struct list
 {
