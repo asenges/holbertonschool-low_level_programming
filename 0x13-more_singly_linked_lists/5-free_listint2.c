@@ -5,7 +5,7 @@
 #include <stddef.h>
 #include "lists.h"
 /**
- * free_listint - free list
+ * free_listint2 - free list
  * @head: list_t ptr
  * Return: void
  */
