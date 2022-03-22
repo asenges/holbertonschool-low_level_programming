@@ -6,7 +6,7 @@
 #include "lists.h"
 /**
  * free_listint2 - free list
- * @head: list_t ptr
+ * @head: listint_t ptr ptr
  * Return: void
  */
 void free_listint2(listint_t **head)
@@ -21,5 +21,7 @@ void free_listint2(listint_t **head)
 		tmp = *head;
 		*head = (*head)->next;
 		free(tmp);
+
 	}
+	*head = NULL;
 }
