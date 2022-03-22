@@ -5,7 +5,7 @@
 #include <stddef.h>
 #include "lists.h"
 /**
- * list_len - list_len
+ * listint_len - list_len
  * @h: list_t ptr
  * Return: size_int
  */
