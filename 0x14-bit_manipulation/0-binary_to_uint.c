@@ -19,7 +19,7 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 
 		num = num << 1;
-		num = num + b[i] - '0';
+		num = num + b[i] - 48;
 		i++;
 	}
 	return (num);
