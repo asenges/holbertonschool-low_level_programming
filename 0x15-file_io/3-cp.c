@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * closing - close function
- * @n: as a file handler
- * Return: int
+ * @fd: as a file handler
+ * Return: void
  */
 void closing(int fd)
 {
