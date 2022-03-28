@@ -1,3 +1,6 @@
+/**
+ * Alex
+ */
 #ifndef MAINH
 #define MAINH
 
