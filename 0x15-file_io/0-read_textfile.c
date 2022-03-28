@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * read_textfile - read_textfile
  * @filename: const char*
@@ -16,20 +15,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buf = malloc(letters);
 	if (!buf)
 		return (0);
-
 	if (filename == NULL)
 	{
 		free(buf);
 		return (0);
 	}
-
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
 		free(buf);
 		return (0);
 	}
-
 	rres = read(fd, buf, letters);
 	if (rres == -1)
 	{
@@ -37,7 +33,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buf);
 		return (0);
 	}
-
 	wres = write(STDIN_FILENO, buf, rres);
 	if (wres == -1 || rres != wres)
 	{
@@ -45,7 +40,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buf);
 		return (0);
 	}
-
 	close(fd);
 	free(buf);
 	return (wres);
