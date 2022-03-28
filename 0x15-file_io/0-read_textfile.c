@@ -29,5 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (wres == -1 || rres != wres)
 		return (0);
 
+	close(fd);
+	free(buf);
 	return (wres);
 }
