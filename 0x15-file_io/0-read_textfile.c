@@ -9,25 +9,25 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	char *fptr = NULL;
-	ssize_t res = 0;
-	ssize_t wret = 0;
+	char *buf = NULL;
+	ssize_t rres = 0;
+	ssize_t wres = 0;
 
-	fptr = malloc(letters);
-	if (!fptr)
+	buf = malloc(letters);
+	if (!buf)
 		return (0);
 
 	if (filename == NULL)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
-	res = read(fd, fptr, letters);
-	if (!fd || !res)
+	rres = read(fd, buf, letters);
+	if (fd == -1 || rres == -1)
 		return (0);
 
-	wret = write(STDIN_FILENO, fptr, res);
-	if (res != wret)
+	wres = write(STDIN_FILENO, buf, rres);
+	if (rres != wres)
 		return (0);
 
-	return (res);
+	return (wres);
 }
