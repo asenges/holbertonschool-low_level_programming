@@ -9,17 +9,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	char *buf = NULL;
-	int rres = 0;
-	int wres = 0;
+	ssize_t rres = 0;
+	ssize_t wres = 0;
 
+	if (filename == NULL)                                                       
+	{
+		return (0);
+	}
 	buf = malloc(letters);
 	if (!buf)
 		return (0);
-	if (filename == NULL)
-	{
-		free(buf);
-		return (0);
-	}
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
