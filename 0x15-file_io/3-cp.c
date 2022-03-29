@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * closing - close function
+ * _close - close function
  * @fd: as a file handler
  * Return: void
  */
-void closing(int fd)
+void _close(int fd)
 {
 	int res = 0;
 
@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
 	sd = open(argv[2], O_TRUNC | O_CREAT | O_WRONLY, 0664);
 	if (sd == -1)
 	{
+		_close(sf);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
@@ -55,7 +56,7 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-	closing(sf);
-	closing(sd);
+	_close(sf);
+	_close(sd);
 	return (0);
 }
