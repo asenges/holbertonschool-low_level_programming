@@ -39,12 +39,16 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	umask(0);
-	sd = open(argv[2], O_TRUNC | O_CREAT | O_WRONLY, 0666);
+	sd = open(argv[2], O_WRONLY | O_TRUNC);
 	if (sd == -1)
 	{
-		_close(sf);
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
+		sd = open(argv[2], O_CREAT | O_WRONLY, 0664);
+		if (sd == -1)
+		{
+			_close(sf);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
 	while (flen == 1024)
 	{
