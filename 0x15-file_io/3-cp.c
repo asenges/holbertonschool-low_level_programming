@@ -38,11 +38,9 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	umask(0);
 	sd = open(argv[2], O_TRUNC | O_CREAT | O_WRONLY, 0644);
 	if (sd == -1)
 	{
-		_close(sf);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
