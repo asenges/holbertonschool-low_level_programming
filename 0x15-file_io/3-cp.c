@@ -49,6 +49,13 @@ int main(int argc, char *argv[])
 	while (flen == 1024)
 	{
 		flen = read(sf, buf, 1024);
+		if (flen == -1)
+		{
+			_close(sf);
+			_close(sd);
+			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
+			exit(98);
+		}
 		dlen = write(sd, buf, flen);
 		if (dlen == -1)
 		{
