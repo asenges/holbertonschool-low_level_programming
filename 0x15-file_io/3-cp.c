@@ -17,14 +17,14 @@ void _close(int fd)
 }
 
 /**
- * main - copy a file to another
- * @argc: source file
- * @argv: destine file
+ * main - copy file to another
+ * @argc: arguments
+ * @argv: files
  * Return: int
  */
 int main(int argc, char *argv[])
 {
-	char buf[1024];
+	static char buf[1024];
 	int sf = 0, sd = 0, flen = 1024, dlen = 0;
 
 	if (argc != 3)
