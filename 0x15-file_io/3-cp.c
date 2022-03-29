@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	umask(0);
-	sd = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0644);
+	sd = open(argv[2], O_TRUNC | O_CREAT | O_WRONLY, 0644);
 	if (sd == -1)
 	{
 		_close(sf);
