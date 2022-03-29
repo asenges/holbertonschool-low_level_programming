@@ -52,6 +52,8 @@ int main(int argc, char *argv[])
 		dlen = write(sd, buf, flen);
 		if (dlen == -1)
 		{
+			_close(sf);
+			_close(sd);
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
