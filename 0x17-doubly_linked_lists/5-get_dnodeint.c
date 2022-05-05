@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * dlistint_len - returns de number of elements in the list
+ * dlistint_len_helper - returns de number of elements in the list
  * Return: size_t
  * @h: const dlistint_t ptr
  */
