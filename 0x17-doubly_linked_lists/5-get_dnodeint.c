@@ -32,10 +32,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	const dlistint_t *h = head;
 
 	list_len = dlistint_len_helper(h);
-	if (index >= list_len)
-		return (NULL);
-
-	if (!head)
+	if (index >= list_len || !head)
 		return (NULL);
 
 	while (head->next)
