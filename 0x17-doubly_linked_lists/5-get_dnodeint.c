@@ -29,9 +29,8 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int i = 0;
 	size_t list_len = 0;
-	const dlistint_t *h = head;
 
-	list_len = dlistint_len_helper(h);
+	list_len = dlistint_len_helper(head);
 	if (index >= list_len || !head)
 		return (NULL);
 
