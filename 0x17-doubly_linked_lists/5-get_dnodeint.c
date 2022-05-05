@@ -31,15 +31,14 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	size_t list_len = 0;
 
 	list_len = dlistint_len_helper(head);
-	if (index >= list_len || !head)
+	if (!head || index >= list_len)
 		return (NULL);
 
-	while (head->next)
+	while (i < index)
 	{
-		if (i == index)
-			return (head);
-		i++;
+		head->prev = head;
 		head = head->next;
+		i++;
 	}
-	return (NULL);
+	return (head);
 }
