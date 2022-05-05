@@ -31,12 +31,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i = 0;
 	size_t list_len = 0;
 
+	list_len = dlistint_len_helper(head);
 	new = malloc(sizeof(dlistint_t));
-	if (!h || !new)
+	if (!h || !new || idx > list_len || (!h && idx > 0))
 		return (NULL);
 
 	head = *h;
-	list_len = dlistint_len_helper(head);
 	if (idx == 0)
 		return (add_dnodeint(h, n));
 	if (idx == list_len)
