@@ -2,7 +2,7 @@
 
 /**
   * key_index - This function gives you the index of a key
-  * 
+  *
   * Return: unsigned long int
   * @key: const unsigned char ptr
   * @size: unsigned long int
