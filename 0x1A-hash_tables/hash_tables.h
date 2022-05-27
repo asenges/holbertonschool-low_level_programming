@@ -10,7 +10,7 @@
 #include <stddef.h>
 #include <string.h>
 
-#define EXIT_SUCCESS 1
+#define EXIT_SUCCESS	0
 
 /**
  * struct hash_node_s - Node of a hash table
